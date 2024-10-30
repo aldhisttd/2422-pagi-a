@@ -15,12 +15,16 @@ if($pass_form==''){
 
 if(isset($_SESSION['msg_user'])||isset($_SESSION['msg_pass'])){
     header('location:form_login.php');
+    exit();
 }
 
-echo "proses login";
-    //tampilkan notif di halaman login
-//jika usernam dan password tidak kosong
-    //cek apakah username & password benar
-        //jika benar antarkan ke halaman beranda
-        //jika tidak benar tampilkan notif di halaman login
+//validasi data login benar/tidak
+if($user_form!='admin' || $pass_form!='123'){
+    $_SESSION['msg_global'] = "Data login tidak valid.";
+    header('location:form_login.php');
+    exit();
+} 
 
+// proses login
+$_SESSION['login'] = true;
+header('location:beranda.php');
