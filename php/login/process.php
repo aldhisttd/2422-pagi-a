@@ -19,7 +19,7 @@ if(isset($_SESSION['msg_user'])||isset($_SESSION['msg_pass'])){
 }
 
 //validasi data login benar/tidak
-if($user_form!='admin' || $pass_form!='123'){
+if($user_form!='admin' && $pass_form!='123'){
     $_SESSION['msg_global'] = "Data login tidak valid.";
     header('location:form_login.php');
     exit();
