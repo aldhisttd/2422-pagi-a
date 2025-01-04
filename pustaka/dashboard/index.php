@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -77,3 +80,8 @@
         
     </body>
 </html>
+
+<?php
+unset($_SESSION['error']);
+unset($_SESSION['success']);
+?>
