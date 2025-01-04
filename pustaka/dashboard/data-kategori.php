@@ -35,6 +35,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <form action="proses/proses-hapus-kategori.php" method="POST">
 
                             <?php
                             include "proses/koneksi.php";
@@ -53,11 +54,11 @@
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
 
-                                            <form action="proses/proses-hapus-kategori.php" method="POST">
+                                            
                                                 <button onclick="return confirm('Anda yakin mau menghapus data ini?')" type="submit" name="btn-hapus" value="<?= $data['kd_kategori'] ?>" class="btn btn-danger waves-effect">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
-                                            </form>
+                                            
                                         </div>
                                     </td>
                                 </tr>
@@ -67,7 +68,7 @@
                             ?>
 
 
-
+                        </form>
                         </tbody>
                     </table>
                 </div>
