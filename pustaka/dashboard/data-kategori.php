@@ -71,6 +71,17 @@
                         </form>
                         </tbody>
                     </table>
+
+
+                    <select name="kategori" id="">
+                        <?php 
+                            $query = "SELECT * FROM kategori";
+                            $q = mysqli_query($koneksi, $query);
+                            while ($data = mysqli_fetch_array($q)) {
+                                echo '<option value="'.$data['kd_kategori'].'">'.$data['nama_kategori'].'</option>';
+                            }
+                        ?>
+                    </select>
                 </div>
 
             </div>
