@@ -35,6 +35,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <form action="proses/proses-hapus-kategori.php" method="POST">
 
                             <?php
                             include "proses/koneksi.php";
@@ -53,11 +54,11 @@
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
 
-                                            <form action="proses/proses-hapus-kategori.php" method="POST">
+                                            
                                                 <button onclick="return confirm('Anda yakin mau menghapus data ini?')" type="submit" name="btn-hapus" value="<?= $data['kd_kategori'] ?>" class="btn btn-danger waves-effect">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
-                                            </form>
+                                            
                                         </div>
                                     </td>
                                 </tr>
@@ -67,9 +68,21 @@
                             ?>
 
 
-
+                        </form>
                         </tbody>
                     </table>
+
+
+                    <select name="kategori" id="">
+                        <?php 
+                            $query = "SELECT * FROM kategori";
+                            $q = mysqli_query($koneksi, $query);
+                            while ($data = mysqli_fetch_array($q)) {
+                                echo '<option value="'.$data['kd_kategori'].'">'.$data['nama_kategori'].'</option>';
+                            }
+                        ?>
+                    </select>
+
                 </div>
 
             </div>
