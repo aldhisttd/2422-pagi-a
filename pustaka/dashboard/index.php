@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if(!isset($_REQUEST['page'])){
+    header('location:?page=dashboard');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
